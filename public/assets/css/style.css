@@ -1,4 +1,30 @@
 body {
     background-image: url("/assets/img/burger.jpg");
+    color:#8d3800;
+   
  }
-  
+
+
+
+.burger {
+    /* background: #00b94a; */
+    background:
+    #f4e9e2;
+    padding-top:10px;
+    border-style: solid;   
+    border-color: 
+    #ab6537;
+
+}
+
+p {
+    padding: 3px;
+}
+
+.btn { 
+    padding: 3px;
+    background:#fbff00;
+    font-weight: bold; 
+    /* color:white; */
+}
+

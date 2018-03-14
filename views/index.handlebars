@@ -1,32 +1,43 @@
 <center>
     {{!-- <img> here burger image --}}
-    <h2>Eat-Da-Burger!</h2>
+    <h2 >Eat-Da-Burger!</h2>
     <div class="container"><img></div>
 </center>
+
 
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-3">
       {{#each burgers}}
          {{#unless devoured}}
-           <div class="container">{{id}}. {{burger_name}}    
-               {{!-- <form action="api/burgers/{{this.id}}" method="PUT" > --}}
-                   <button type="submit">Devour</button>
-                {{!-- </form>  --}}
-
+          <div class="row burger" >
+              <div class="col-md-9">
+                  <p class="">{{id}}. {{burger_name}}</p> 
+              </div>
+              <div class="col-md-3">
+                <span class="input-group-btn">
+								<form action="api/burgers/{{this.id}}?_method=PUT" method="POST">
+									<input type="hidden" name="devoured" value="true">
+									<button class="btn btn-m" type="submit"> Devour! </button>
+								</form>
+				</span>
+            </div>
           </div>  
         {{/unless}}
       {{/each}}   
     </div>
 
     <div class="col-md-3">
-        {{#each burgers}}
-        {{#if devoured}}
-        <div class="container">
-            {{burger_name}}
-        </div>   
-            {{/if}}
-        {{/each}}
+        {{!-- {{#each burgers}}
+        {{#if devoured}} --}}
+            <div class="row burger" >
+              <div class="col-md-9">
+                  {{!-- <p class="">{{id}}. {{burger_name}}</p>  --}}
+                  <p class="">Test</p> 
+              </div>
+          </div>   
+            {{!-- {{/if}}
+        {{/each}} --}}
     </div>
 </div>
 
@@ -38,8 +49,9 @@
             <label for="exampleFormControlTextarea1"></label>
             <textarea class="form-control" rows="2" id="newburger" name="burger_name"></textarea>
             <br>
-            <button type="submit">Add a Burger</button>
+            <button type="submit" class="btn btn-m">Add a Burger</button>
         </div>
     </form>
     </div>
 </center>
+ 
