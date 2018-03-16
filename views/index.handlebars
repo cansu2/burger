@@ -16,8 +16,8 @@
               </div>
               <div class="col-md-3">
                 <span class="input-group-btn">
-								<form action="api/burgers/{{this.id}}?_method=PUT" method="POST">
-									<input type="hidden" name="devoured" value="true">
+								<form method="POST" action="/api/burgers/update?_method=PUT">
+									<input type="hidden" name="burger_id" value={{this.id}}>
 									<button class="btn btn-m" type="submit"> Devour! </button>
 								</form>
 				</span>
@@ -28,23 +28,23 @@
     </div>
 
     <div class="col-md-3">
-        {{!-- {{#each burgers}}
-        {{#if devoured}} --}}
+        {{#each burgers}}
+        {{#if devoured}}
             <div class="row burger" >
               <div class="col-md-9">
-                  {{!-- <p class="">{{id}}. {{burger_name}}</p>  --}}
-                  <p class="">Test</p> 
+                  <p class="">{{burger_name}}</p> 
+                  {{!-- <p class="">Test</p>  --}}
               </div>
           </div>   
-            {{!-- {{/if}}
-        {{/each}} --}}
+            {{/if}}
+        {{/each}}
     </div>
 </div>
 
 <center>
     <div class="row">
         <div class="col-md-4"></div>
-    <form class="create-burger" action="/api/burgers" method="POST">
+    <form class="create-burger" action="api/burgers" method="POST">
         <div class="form-group col-md-4">
             <label for="exampleFormControlTextarea1"></label>
             <textarea class="form-control" rows="2" id="newburger" name="burger_name"></textarea>

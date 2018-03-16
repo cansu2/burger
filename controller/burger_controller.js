@@ -25,13 +25,10 @@ router.post("/api/burgers", function (req, res) {
 
 
 
-router.put('api/burgers/:id', function(req, res){
-	var condition = 'id = ' + req.params.id;
-
-	console.log('condition ', condition);
-
-	burgers.update({'devoured': req.body.devoured}, condition, function(data){
-		res.redirect('/');
-	});
+router.put('/api/burgers/update', function(req, res){
+  burger.update({devoured: true},"id = " + req.body.burger_id, function(result) {
+    console.log(result);
+    res.redirect("/");
+  });
 });
 module.exports = router;
